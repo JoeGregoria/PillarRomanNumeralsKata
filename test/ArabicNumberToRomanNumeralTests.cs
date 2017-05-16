@@ -12,5 +12,12 @@ namespace RomanNumeralsTests
             ArabicNumberToRomanNumeral arabicNumberToRomanNumeral = new ArabicNumberToRomanNumeral();
             Assert.Equal("I", arabicNumberToRomanNumeral.Convert(1));
         }
+
+        [Fact]
+        public void Given3ShouldReturnIII()
+        {
+            ArabicNumberToRomanNumeral arabicNumberToRomanNumeral = new ArabicNumberToRomanNumeral();
+            Assert.Equal("III", arabicNumberToRomanNumeral.Convert(3));
+        }
     }
 }

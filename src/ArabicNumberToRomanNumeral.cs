@@ -8,7 +8,12 @@ namespace RomanNumerals
     {
         public string Convert(int value)
         {
-            return "I";
+            StringBuilder stringBuilder = new StringBuilder();
+            for (int i = 0; i < value; i++)
+            {
+                stringBuilder.Append("I");
+            }
+            return stringBuilder.ToString();
         }
     }
 }
