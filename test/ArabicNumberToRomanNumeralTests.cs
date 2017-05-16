@@ -7,38 +7,31 @@ namespace RomanNumeralsTests
     public class ArabicNumberToRomanNumeralTests
     {
         [Fact]
-        public void Given1ShouldReturnI()
+        public void GivenZeroShouldReturnNothing()
         {
             ArabicNumberToRomanNumeral arabicNumberToRomanNumeral = new ArabicNumberToRomanNumeral();
-            Assert.Equal("I", arabicNumberToRomanNumeral.Convert(1));
+            Assert.Equal("", arabicNumberToRomanNumeral.Convert(0));
         }
 
         [Fact]
-        public void Given3ShouldReturnIII()
+        public void GivenNegativeNumberShouldReturnNothing()
         {
             ArabicNumberToRomanNumeral arabicNumberToRomanNumeral = new ArabicNumberToRomanNumeral();
-            Assert.Equal("III", arabicNumberToRomanNumeral.Convert(3));
+            Assert.Equal("", arabicNumberToRomanNumeral.Convert(-11));
         }
 
-        [Fact]
-        public void Given5ShouldReturnV()
+        [Theory]
+        [InlineData(1, "I")]
+        [InlineData(3, "III")]
+        [InlineData(4, "IV")]
+        [InlineData(5, "V")]
+        [InlineData(9, "IX")]
+        [InlineData(10, "X")]
+        [InlineData(20, "XX")]
+        public void GivenANumberShouldGetTheExpectedRomanNumeral(int arabic, string roman)
         {
             ArabicNumberToRomanNumeral arabicNumberToRomanNumeral = new ArabicNumberToRomanNumeral();
-            Assert.Equal("V", arabicNumberToRomanNumeral.Convert(5));
-        }
-
-        [Fact]
-        public void Given10ShouldReturnX()
-        {
-            ArabicNumberToRomanNumeral arabicNumberToRomanNumeral = new ArabicNumberToRomanNumeral();
-            Assert.Equal("X", arabicNumberToRomanNumeral.Convert(10));
-        }
-
-        [Fact]
-        public void Given9ShouldReturnIX()
-        {
-            ArabicNumberToRomanNumeral arabicNumberToRomanNumeral = new ArabicNumberToRomanNumeral();
-            Assert.Equal("IX", arabicNumberToRomanNumeral.Convert(9));
+            Assert.Equal(roman, arabicNumberToRomanNumeral.Convert(arabic));
         }
     }
 }
