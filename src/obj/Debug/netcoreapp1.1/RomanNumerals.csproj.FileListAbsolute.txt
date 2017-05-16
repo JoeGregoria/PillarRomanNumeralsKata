@@ -1,8 +1,0 @@
-C:\Users\Gregoria\Documents\GitHub\PillarRomanNumeralsKata\src\bin\Debug\netcoreapp1.1\RomanNumerals.deps.json
-C:\Users\Gregoria\Documents\GitHub\PillarRomanNumeralsKata\src\bin\Debug\netcoreapp1.1\RomanNumerals.runtimeconfig.json
-C:\Users\Gregoria\Documents\GitHub\PillarRomanNumeralsKata\src\bin\Debug\netcoreapp1.1\RomanNumerals.runtimeconfig.dev.json
-C:\Users\Gregoria\Documents\GitHub\PillarRomanNumeralsKata\src\bin\Debug\netcoreapp1.1\RomanNumerals.dll
-C:\Users\Gregoria\Documents\GitHub\PillarRomanNumeralsKata\src\bin\Debug\netcoreapp1.1\RomanNumerals.pdb
-C:\Users\Gregoria\Documents\GitHub\PillarRomanNumeralsKata\src\obj\Debug\netcoreapp1.1\RomanNumerals.AssemblyInfo.cs
-C:\Users\Gregoria\Documents\GitHub\PillarRomanNumeralsKata\src\obj\Debug\netcoreapp1.1\RomanNumerals.dll
-C:\Users\Gregoria\Documents\GitHub\PillarRomanNumeralsKata\src\obj\Debug\netcoreapp1.1\RomanNumerals.pdb
