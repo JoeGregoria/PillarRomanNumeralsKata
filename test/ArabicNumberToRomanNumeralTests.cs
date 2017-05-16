@@ -34,11 +34,11 @@ namespace RomanNumeralsTests
             Assert.Equal("X", arabicNumberToRomanNumeral.Convert(10));
         }
 
-        //[Fact]
-        //public void Given9ShouldReturnIX()
-        //{
-        //    ArabicNumberToRomanNumeral arabicNumberToRomanNumeral = new ArabicNumberToRomanNumeral();
-        //    Assert.Equal("IX", arabicNumberToRomanNumeral.Convert(9));
-        //}
+        [Fact]
+        public void Given9ShouldReturnIX()
+        {
+            ArabicNumberToRomanNumeral arabicNumberToRomanNumeral = new ArabicNumberToRomanNumeral();
+            Assert.Equal("IX", arabicNumberToRomanNumeral.Convert(9));
+        }
     }
 }

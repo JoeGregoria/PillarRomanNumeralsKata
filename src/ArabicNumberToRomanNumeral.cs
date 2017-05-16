@@ -1,25 +1,25 @@
-﻿using System;
-using System.Collections;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Text;
 
 namespace RomanNumerals
 {
     public class ArabicNumberToRomanNumeral
     {
-        private SortedDictionary<int, string> ArabicToRomanDictionary = new SortedDictionary<int, string>(new IntComparerHighestFirst())
+        private SortedDictionary<int, string> ArabicToRomanMap = new SortedDictionary<int, string>(new DecendingIntegerComparer())
         {
             { 10, "X" },
+            {  9, "IX" },
             {  5, "V" },
+            {  4, "IV" },
             {  1, "I" }
         };
 
-        public string Convert(int value)
+        public string Convert(int arabicValue)
         {
-            int valueRemaining = value;
+            int valueRemaining = arabicValue;
             StringBuilder stringBuilder = new StringBuilder();
 
-            foreach (var entry in ArabicToRomanDictionary)
+            foreach (var entry in ArabicToRomanMap)
             {
                 while (valueRemaining >= entry.Key)
                 {
@@ -30,17 +30,6 @@ namespace RomanNumerals
             }
 
             return stringBuilder.ToString();
-        }
-    }
-
-    public class IntComparerHighestFirst : IComparer<int>
-    {
-        public int Compare(int left, int right)
-        {
-            if (left == right) return 0;
-            if (left < right) return 1;
-            if (left > right) return -1;
-            throw new ArgumentException("what the heck?");
         }
     }
 }
