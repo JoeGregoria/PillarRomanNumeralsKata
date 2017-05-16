@@ -9,6 +9,7 @@ namespace RomanNumeralsTests
         [Fact]
         public void GivenZeroShouldReturnNothing()
         {
+            //https://en.wikipedia.org/wiki/Roman_numerals#Zero
             ArabicNumberToRomanNumeral arabicNumberToRomanNumeral = new ArabicNumberToRomanNumeral();
             Assert.Equal("", arabicNumberToRomanNumeral.Convert(0));
         }
@@ -16,6 +17,7 @@ namespace RomanNumeralsTests
         [Fact]
         public void GivenNegativeNumberShouldReturnNothing()
         {
+            // http://turner.faculty.swau.edu/mathematics/materialslibrary/roman/
             ArabicNumberToRomanNumeral arabicNumberToRomanNumeral = new ArabicNumberToRomanNumeral();
             Assert.Equal("", arabicNumberToRomanNumeral.Convert(-11));
         }
@@ -28,6 +30,9 @@ namespace RomanNumeralsTests
         [InlineData(9, "IX")]
         [InlineData(10, "X")]
         [InlineData(20, "XX")]
+        [InlineData(1066, "MLXVI")]
+        [InlineData(1989, "MCMLXXXIX")]
+        [InlineData(2017, "MMXVII")]
         public void GivenANumberShouldGetTheExpectedRomanNumeral(int arabic, string roman)
         {
             ArabicNumberToRomanNumeral arabicNumberToRomanNumeral = new ArabicNumberToRomanNumeral();
