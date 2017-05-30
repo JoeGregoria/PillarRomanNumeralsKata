@@ -42,12 +42,12 @@ namespace RomanNumerals
         /// <summary>
         /// Convert an integer in to its roman numeral equivalant.
         /// </summary>
-        /// <param name="arabicValue">an integer</param>
+        /// <param name="value">the number to convert to a roman numeral</param>
         /// <returns>a string containing the roman numeral value. 
         /// Will be empty for values that cannot be expressed in roman numerals (e.g., zero, negative numbers)</returns>
-        public string Convert(int arabicValue)
+        public string Convert(int value)
         {
-            int valueRemaining = arabicValue;
+            int valueRemaining = value;
             StringBuilder returnStringBuilder = new StringBuilder();
 
             foreach (var specialValueEntry in ArabicToRomanDecendingSpecialValues)
