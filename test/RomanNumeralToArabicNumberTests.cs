@@ -9,24 +9,43 @@ namespace RomanNumeralsTests
     public class RomanNumeralToArabicNumberTests
     {
         [Fact]
-        public void GivenIShouldReturn1()
+        public void GivenNullShouldReturn0()
         {
             var romanNumeralToArabicNumber = new RomanNumeralToArabicNumber();
-            Assert.Equal(1, romanNumeralToArabicNumber.Convert("I"));
+            Assert.Equal(0, romanNumeralToArabicNumber.Convert(null));
         }
 
         [Fact]
-        public void GivenIIIShouldReturn3()
+        public void GivenEmptyShouldReturn0()
         {
             var romanNumeralToArabicNumber = new RomanNumeralToArabicNumber();
-            Assert.Equal(3, romanNumeralToArabicNumber.Convert("III"));
+            Assert.Equal(0, romanNumeralToArabicNumber.Convert(""));
         }
 
         [Fact]
-        public void GivenIXShouldReturn9()
+        public void GivenNotRomanAtAllShouldReturn0()
         {
             var romanNumeralToArabicNumber = new RomanNumeralToArabicNumber();
-            Assert.Equal(9, romanNumeralToArabicNumber.Convert("IX"));
+            Assert.Equal(0, romanNumeralToArabicNumber.Convert("JOE"));
+        }
+
+        [Fact]
+        public void GivenPartialRomanShouldReturn0()
+        {
+            var romanNumeralToArabicNumber = new RomanNumeralToArabicNumber();
+            Assert.Equal(0, romanNumeralToArabicNumber.Convert("MMX8"));
+        }
+
+        [Theory]
+        [InlineData("I", 1)]
+        [InlineData("III", 3)]
+        [InlineData("IX", 9)]
+        [InlineData("MLXVI", 1066)]
+        [InlineData("MCMLXXXIX", 1989)]
+        public void GivenRomanNumeralShouldReturnArabic(string romanNumeral, int arabicNumber)
+        {
+            var romanNumeralToArabicNumber = new RomanNumeralToArabicNumber();
+            Assert.Equal(arabicNumber, romanNumeralToArabicNumber.Convert(romanNumeral));
         }
     }
 }

@@ -26,7 +26,7 @@ namespace RomanNumerals
                     {
                         returnValue += twoCharRomanValue;
                         romanIndex += 2;
-                        break;
+                        continue;
                     }
                 }
                 // we didn't find a pair match, so check just this 
