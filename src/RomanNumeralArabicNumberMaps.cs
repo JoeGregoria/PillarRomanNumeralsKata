@@ -4,6 +4,9 @@ using System.Text;
 
 namespace RomanNumerals
 {
+    /// <summary>
+    /// Maps of interesting and useful facts about roman numerals that help in the translation to and from arabic numbers.
+    /// </summary>
     public static class RomanNumeralArabicNumberMaps
     {
         /// <summary>

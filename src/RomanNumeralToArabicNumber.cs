@@ -49,6 +49,15 @@ namespace RomanNumerals
             return returnValue;
         }
 
+        /// <summary>
+        /// Attempt to get the arabic/integer equivelant of a substring of roman numerals.
+        /// </summary>
+        /// <param name="romanNumeralString">the full roman numeral string</param>
+        /// <param name="romanNumeralStringIndex">the index at which we are starting</param>
+        /// <param name="numberOfCharactersToCheck">the number of characters to check (should be 1 or 2)</param>
+        /// <param name="arabicValue">if there is a corresponding arabic value, it is returned here. If there is not,
+        /// e.g., a two-character string is not in the special values table, then returns false and this value is 0</param>
+        /// <returns>true if the value is found (and the valud is in 'arabicValue'), false otherwise</returns>
         private bool TryGetArabicValue(string romanNumeralString, int romanNumeralStringIndex, int numberOfCharactersToCheck, out int arabicValue)
         {
             if ((romanNumeralStringIndex + numberOfCharactersToCheck) <= romanNumeralString.Length)

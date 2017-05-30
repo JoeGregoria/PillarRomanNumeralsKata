@@ -3,6 +3,9 @@ using System.Collections.Generic;
 
 namespace RomanNumerals
 {
+    /// <summary>
+    /// Comparision class to put integers in decending order.
+    /// </summary>
     public class DecendingIntegerComparer : IComparer<int>
     {
         public int Compare(int left, int right)
