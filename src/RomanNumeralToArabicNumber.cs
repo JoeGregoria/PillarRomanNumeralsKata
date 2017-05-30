@@ -8,7 +8,14 @@ namespace RomanNumerals
     {
         public int Convert(string value)
         {
-            return 1;
+            int returnValue = 0;
+
+            foreach (char romanDigit in value.ToCharArray())
+            {
+                returnValue += 1;
+            }
+
+            return returnValue;
         }
     }
 }
