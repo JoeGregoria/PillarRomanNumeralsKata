@@ -15,30 +15,6 @@ namespace RomanNumerals
     /// </summary>
     public class ArabicNumberToRomanNumeral
     {
-       
-        /// <summary>
-        /// A mapping of special arabic numbers to their roman numeral counterpart. This map is used to drive the creation of the roman from the arabic.
-        /// The Keys are arabic integers were something interesting happens; the Values are their roman rumeral equivalant.
-        /// We include values like "CM", "CD", "XC", "XL", "IX", and "IV" to keep the algorithm cleaner.
-        /// The algorithm depends on the keys to be in decending order.
-        /// </summary>
-        private SortedDictionary<int, string> ArabicToRomanDecendingSpecialValues = new SortedDictionary<int, string>(new DecendingIntegerComparer())
-        {
-            {1000, "M"  },
-            { 900, "CM" },  // special case
-            { 500, "D"  },
-            { 400, "CD" },  // special case
-            { 100, "C"  },
-            {  90, "XC" },  // special case
-            {  50, "L"  },
-            {  40, "XL" },  // special case
-            {  10, "X"  },
-            {   9, "IX" },  // special case
-            {   5, "V"  },
-            {   4, "IV" },  // special case
-            {   1, "I"  }
-        };
-
         /// <summary>
         /// Convert an integer in to its roman numeral equivalant.
         /// </summary>
@@ -50,7 +26,7 @@ namespace RomanNumerals
             int valueRemaining = value;
             StringBuilder returnStringBuilder = new StringBuilder();
 
-            foreach (var specialValueEntry in ArabicToRomanDecendingSpecialValues)
+            foreach (var specialValueEntry in RomanNumeralArabicNumberMaps.ArabicToRomanDecendingSpecialValues)
             {
                 // we depend on the keys to be decending for this algorithm to work
                 while (valueRemaining >= specialValueEntry.Key)
