@@ -42,5 +42,17 @@ namespace RomanNumerals
                 RomanToArabicSpecialValues.Add(entry.Value, entry.Key);
             }
         }
+
+        public static IReadOnlyList<string> IllegalRomanNumeralPatterns = new List<string>()
+        {
+            //The symbols 'I', 'X', 'C', and 'M' can be repeated at most 3 times in a row. 
+            "IIII",
+            "XXXX",
+            "MMMM",
+            //The symbols 'V', 'L', and 'D' can never be repeated
+            "VV",
+            "LL",
+            "DD"
+        };
     }
 }
