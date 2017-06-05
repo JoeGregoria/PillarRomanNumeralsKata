@@ -26,7 +26,6 @@ namespace RomanNumerals
                 {
                     returnStringBuilder.Append(specialValueEntry.Value);
                     valueRemaining = valueRemaining - specialValueEntry.Key;
-                    if (valueRemaining == 0) break;
                 }
             }
 
