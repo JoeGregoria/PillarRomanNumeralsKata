@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Text;
 
 namespace RomanNumerals
@@ -15,7 +16,14 @@ namespace RomanNumerals
         /// We include values like "CM", "CD", "XC", "XL", "IX", and "IV" to keep the algorithm cleaner.
         /// The algorithm depends on the keys to be in decending order.
         /// </summary>
-        public static readonly SortedDictionary<int, string> ArabicToRomanDecendingSpecialValues = new SortedDictionary<int, string>(new DecendingIntegerComparer())
+        public static readonly IDictionary<int, string> ArabicToRomanDecendingSpecialValues;
+
+        /// <summary>
+        /// A mapping of roman numeral special strings to their arabic number counterpart. 
+        /// </summary>
+        public static readonly IDictionary<string, int> RomanToArabicSpecialValues;
+
+        private static SortedDictionary<int, string> m_specialValues = new SortedDictionary<int, string>()
         {
             {1000, "M"  },
             { 900, "CM" },  // special case
@@ -32,12 +40,11 @@ namespace RomanNumerals
             {   1, "I"  }
         };
 
-        /// <summary>
-        /// A mapping of roman numeral special strings to their arabic number counterpart. 
-        /// </summary>
-        public static readonly Dictionary<string, int> RomanToArabicSpecialValues;
         static RomanNumeralArabicNumberMaps()
         {
+            // To not use a custom IComparer, we need to create a new IOrderedEnumerable in descending order, and then turn it back in to a dictionary.
+            ArabicToRomanDecendingSpecialValues = m_specialValues.OrderByDescending(x => x.Key).ToDictionary(x => x.Key, x => x.Value);
+
             // construct the inverse-dictionary of the arabic-to-roman table at run time, so we only have one master copy
             RomanToArabicSpecialValues = new Dictionary<string, int>();
             foreach(var entry in ArabicToRomanDecendingSpecialValues)
@@ -57,5 +64,6 @@ namespace RomanNumerals
             "LL",
             "DD"
         };
+
     }
 }
