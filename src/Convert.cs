@@ -22,7 +22,7 @@ namespace PillarRomanNumeralsKata
             if (int.TryParse(args[0], out integerValue))
             {
                 Console.WriteLine($"Converting arabic number {integerValue}");
-                ArabicNumberToRomanNumeral arabicNumberToRomanNumeral = new ArabicNumberToRomanNumeral();
+                ArabicNumberToRomanNumeralConverter arabicNumberToRomanNumeral = new ArabicNumberToRomanNumeralConverter();
                 Console.WriteLine(arabicNumberToRomanNumeral.Convert(integerValue));
                 return 1;
             } 
@@ -30,7 +30,7 @@ namespace PillarRomanNumeralsKata
             {
                 string romanNumeral = args[0];
                 Console.WriteLine($"Converting roman numeral {romanNumeral}");
-                RomanNumeralToArabicNumber romanNumeralToArabicNumber = new RomanNumeralToArabicNumber();
+                RomanNumeralToArabicNumberConverter romanNumeralToArabicNumber = new RomanNumeralToArabicNumberConverter();
                 Console.WriteLine(romanNumeralToArabicNumber.Convert(romanNumeral));
                 return 1;
             }

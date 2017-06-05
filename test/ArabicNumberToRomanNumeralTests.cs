@@ -10,16 +10,16 @@ namespace RomanNumeralsTests
         public void GivenZeroShouldReturnNothing()
         {
             //https://en.wikipedia.org/wiki/Roman_numerals#Zero
-            ArabicNumberToRomanNumeral arabicNumberToRomanNumeral = new ArabicNumberToRomanNumeral();
-            Assert.Equal("", arabicNumberToRomanNumeral.Convert(0));
+            var converter = new ArabicNumberToRomanNumeralConverter();
+            Assert.Equal("", converter.Convert(0));
         }
 
         [Fact]
         public void GivenNegativeNumberShouldReturnNothing()
         {
             // http://turner.faculty.swau.edu/mathematics/materialslibrary/roman/
-            ArabicNumberToRomanNumeral arabicNumberToRomanNumeral = new ArabicNumberToRomanNumeral();
-            Assert.Equal("", arabicNumberToRomanNumeral.Convert(-11));
+            var converter = new ArabicNumberToRomanNumeralConverter();
+            Assert.Equal("", converter.Convert(-11));
         }
 
         [Theory]
@@ -35,8 +35,8 @@ namespace RomanNumeralsTests
         [InlineData(2017, "MMXVII")]
         public void GivenANumberShouldGetTheExpectedRomanNumeral(int arabic, string roman)
         {
-            ArabicNumberToRomanNumeral arabicNumberToRomanNumeral = new ArabicNumberToRomanNumeral();
-            Assert.Equal(roman, arabicNumberToRomanNumeral.Convert(arabic));
+            var converter = new ArabicNumberToRomanNumeralConverter();
+            Assert.Equal(roman, converter.Convert(arabic));
         }
     }
 }

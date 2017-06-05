@@ -23,6 +23,9 @@ namespace RomanNumerals
         /// </summary>
         public static readonly IDictionary<string, int> RomanToArabicSpecialValues;
 
+        /// <summary>
+        /// The base dictionary, upon which all other maps are created.
+        /// </summary>
         private static SortedDictionary<int, string> m_specialValues = new SortedDictionary<int, string>()
         {
             {1000, "M"  },
@@ -40,6 +43,9 @@ namespace RomanNumerals
             {   1, "I"  }
         };
 
+        /// <summary>
+        /// Static constructor; creates the *SpecialValues dictionaries.
+        /// </summary>
         static RomanNumeralArabicNumberMaps()
         {
             // To not use a custom IComparer, we need to create a new IOrderedEnumerable in descending order, and then turn it back in to a dictionary.

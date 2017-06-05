@@ -6,7 +6,7 @@ namespace RomanNumerals
     /// <summary>
     ///  Convert an arabic number (aka, an integer) to a roman numeral string value.
     /// </summary>
-    public class ArabicNumberToRomanNumeral
+    public class ArabicNumberToRomanNumeralConverter
     {
         /// <summary>
         /// Convert an integer in to its roman numeral equivalant.

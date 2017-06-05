@@ -17,8 +17,8 @@ namespace RomanNumeralsTests
         [InlineData("MIIII")]
         public void GivenInvalidRomanNumeralShouldReturn0(string romanNumeral)
         {
-            var romanNumeralToArabicNumber = new RomanNumeralToArabicNumber();
-            Assert.Equal(0, romanNumeralToArabicNumber.Convert(null));
+            var converter = new RomanNumeralToArabicNumberConverter();
+            Assert.Equal(0, converter.Convert(null));
         }
 
         [Theory]
@@ -29,8 +29,8 @@ namespace RomanNumeralsTests
         [InlineData("MCMLXXXIX", 1989)]
         public void GivenValidRomanNumeralShouldReturnArabicNumber(string romanNumeral, int arabicNumber)
         {
-            var romanNumeralToArabicNumber = new RomanNumeralToArabicNumber();
-            Assert.Equal(arabicNumber, romanNumeralToArabicNumber.Convert(romanNumeral));
+            var converter = new RomanNumeralToArabicNumberConverter();
+            Assert.Equal(arabicNumber, converter.Convert(romanNumeral));
         }
     }
 }
