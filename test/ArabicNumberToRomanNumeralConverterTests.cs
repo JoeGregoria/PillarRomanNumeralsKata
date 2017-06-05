@@ -1,5 +1,4 @@
 using RomanNumerals;
-using System;
 using Xunit;
 
 namespace RomanNumeralsTests
