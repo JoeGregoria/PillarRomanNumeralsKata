@@ -6,7 +6,7 @@ using Xunit;
 
 namespace RomanNumeralsTests
 {
-    public class RomanNumeralToArabicNumberTests
+    public class RomanNumeralToArabicNumberConverterTests
     {
         [Theory]
         [InlineData(null)]

@@ -4,7 +4,7 @@ using Xunit;
 
 namespace RomanNumeralsTests
 {
-    public class ArabicNumberToRomanNumeralTests
+    public class ArabicNumberToRomanNumeralConverterTests
     {
         [Fact]
         public void GivenZeroShouldReturnNothing()
