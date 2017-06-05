@@ -17,9 +17,21 @@ namespace RomanNumeralsTests
         }
 
         [Fact]
-        public void GivenRomanNumeralStringArgumentResultsIn1()
+        public void GivenRomanNumeralStringArgumentResultsInOne()
         {
             Assert.Equal(1, PillarRomanNumeralsKata.Convert.Main(new string[] { "X" }));
+        }
+
+        [Fact]
+        public void GivenArabicNumberArgumentResultsInOne()
+        {
+            Assert.Equal(1, PillarRomanNumeralsKata.Convert.Main(new string[] { "10" }));
+        }
+
+        [Fact]
+        public void GivenInvalidRomanNumeralStringArgumentResultsInOne()
+        {
+            Assert.Equal(1, PillarRomanNumeralsKata.Convert.Main(new string[] { "This is not a valid roman numeral" }));
         }
     }
 }
